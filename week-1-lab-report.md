@@ -1,6 +1,7 @@
 # Week 1 Lab Report
 ## 1. Installing VScode
 ![Image](screenshot-w101.jpg)
+
 I installed my VScode and launched it with my GitHub Desktop. This is the screenshot showing what I did in my lab report at week 0.
 
 ## 2. Remotely Connecting
@@ -29,4 +30,5 @@ I followed the instruction to install the key in my terminal. After this, I can 
 
 ## 6. Optimizing Remote Running
 ![Image](screenshot-w106.jpg)
+
 I used the example command to access the file, and it is really quick to access since it only use one line. First, I need to log in through ssh. Then, I write cp, javac, and java command in one line and it works. 
