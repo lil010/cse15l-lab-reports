@@ -39,9 +39,28 @@ and uploaded it to VScode for manipulation. After that, I use scp by typing comm
 
 ## 5. Setting an SSH Key
 ![Image](screenshot-w105.jpg)
-I followed the instruction to install the key in my terminal. After this, I can save time entering my password when I used the scp command. Super helpful!:)
+I followed the instruction to install the key in my terminal. First, I used "ssh-keygen" command to generate a key, and I entered the "/Users/username/.ssh/id_rsa" as a file to save the key. Then I entered the empty passphrase as instructed. Next, I logged in with "ssh + my account" command with password once, and used "mkdir. ssh" command to make a directory with ssh. Then, I logged off my account by entering "exit" and used 
+
+"scp /Users/username/.ssh/id_rsa.pub  + account:~/.ssh/authorized_keys" 
+
+command to save the key. I needed to enter my password once. After this, I can save time entering my password when I used the scp command. It is shown that I can use quick save-copy file command "scp + file name + my account:~/" for remote access without entering my password Super helpful!:)
 
 ## 6. Optimizing Remote Running
 ![Image](screenshot-w106.jpg)
 
-I used the example command to access the file, and it is really quick to access since it only use one line. First, I need to log in through ssh. Then, I write cp, javac, and java command in one line and it works. 
+I firstly tried to used ssh command with one other single command. For example, I tried
+
+ssh + username + "ls"
+
+to list the files in the directory and it worked. It saved the time to used them separately. 
+
+
+Also, I used the example command to access the file, and it is really quick to access since it only use one line. For example, I logged in through "ssh + username" command, since my laptop was not fully set up with java first week and I needed to operate on remote server. Then, I wrote 
+
+"cp WhereAmI.java OtherMain.java; javac OtherMain.java; java WhereAmI" 
+
+to save copy and access the file at the same time. Eventually, it printed out the lines for executing the WhereAmI.java file as the same results to used these three codes separately. 
+
+![image](screenshot-w107.jpg)
+
+We can also put any operating commands after the "ssh + username" to achieve login and operating files in one line. For example, I tried "ssh + username + "cat file", and it successfully printed out the codes in the file. 
