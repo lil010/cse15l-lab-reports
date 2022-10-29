@@ -124,23 +124,40 @@ to separate the code after the add, which is "s" and the part after "=" apart. A
 
 ## Part 2 Bugs
 
-Failure from ArrayExamples:
+1.Failure from ArrayExamples:
 
 reversed method:
 
-Failure input: {2, 3} as example; any array that has elements more than 1.
+Failure inducing input: {2, 3} as example; any array that has elements more than 1.
 
 Symptom: The jUnit shows that the index at 0 is expected 3 but 0.
+![image](week-3-lab-report/screenshot-w305.jpg)
+Note: I mistakely named the method "testReverseInPlace2" instead of naming according to the method "reversed". Since I don't have the original code anymore, I am not able to fix the name of the method in the screenshot. However, I'm here to clarify that "testReverseInPlace2" means to test the method "reversed" and it actually works as a unit test to test that method. I'm sorry for any confusion caused by the screenshot. 
 
-Bug: the array copies the new created 0 valued array to the original array. 
+Bug code (betweem line 15 to line 17):
+
+![image](week-3-lab-report/screenshot-w308.jpg)
+
+Bug: In this method, the code in line 17 copies the elements in indices of new created int array *newArray* to the input array *arr* in corresponding position, causing the input array *arr* to store the elements of reversed new initialized array, which are zeros. 
+
+Bug fixed code: 
+![image](week-3-lab-report/screenshot-w310.jpg)
 
 
-Failure from ListExamples:
+2.Failure from ListExamples:
 
 merge method:
 
-Failure input: {"apple", "mango", "pineapple"}, {"banana", "strawberry"}
+Failure inducing input: {"apple", "mango", "pineapple"}, {"banana", "strawberry"}
 
-Symptom: Out of Space Error
+Symptom: Out of Memory Error: java runs out of heap space.
+![image](week-3-lab-report/screenshot-w306.jpg)
 
-Bug: The increment in the third while loop in the code should be "index2 += 1" rather than "index1 += 1".
+Bug code (line 43):
+![image](week-3-lab-report/screenshot-w307.jpg)
+
+Bug: In this method, the while-loop has a bug at the increment value. As the original code increase the value of index1 by 1 each while-loop, the condition-testing value index2 will never have chance of increment, and thus the while-loop will forever execute until java runs out of heap space. Hence, the increment in the while-loop in the code should be "index2 += 1" rather than "index1 += 1".
+
+Fixed code:
+
+![image](week-3-lab-report/screenshot-w309.jpg)
