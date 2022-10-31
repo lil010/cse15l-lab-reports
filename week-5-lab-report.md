@@ -104,7 +104,8 @@ I tried to use the command to 2 files and it worked. I modified the file *chapte
 
 ### Example 3:
 
-```[cs15lfa22at@ieng6-202]:technical:275$ find -mmin 10
+```
+[cs15lfa22at@ieng6-202]:technical:275$ find -mmin 10
 [cs15lfa22at@ieng6-202]:technical:276$
 ```
 
