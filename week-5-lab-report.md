@@ -1,5 +1,7 @@
 # Week 3 Lab Report
 
+## Command I chose: ```find```
+
 ## Command Line 1: ```-amin n```
 
 This command line is used for finding file that was last accessed n minutes ago.
